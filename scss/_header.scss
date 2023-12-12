@@ -1,0 +1,58 @@
+header {
+    position: sticky;
+    top: 1.6rem;
+    margin-top: 1.6rem;
+    z-index: 2023;
+    .content-header {
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        background: rgba(255, 255, 255, 0.04);
+        backdrop-filter: blur(3.5px);
+        padding: 0.8rem 0.8rem 0.8rem 2.1rem;
+        @include flexCenterJustify;
+        .content-left {
+            @include flex-center;
+            gap: 1.6rem;
+            a {
+                @include flex-center;
+                gap: 0.8rem;
+                span {
+                    color: $gray-200;
+                    font-size: 1.6rem;
+                    font-weight: 500;
+                    line-height: 150%;
+                    transition: color 0.3s ease;
+                }
+                &:hover {
+                    span {
+                        color: $purple-10;
+                    }
+                }
+            }
+        }
+        .btn-mobile {
+            display: none;
+        }
+    }
+}
+
+//responsive
+
+header {
+    @include resposivo('celular') {
+        .content-header {
+            padding: 2rem 2.5rem;
+            margin: auto 0;
+            .logo {
+                max-width: 13.5rem;
+            }
+            .content-left {
+                display: none;
+            }
+            .btn-mobile {
+                display: block;
+            }
+        }
+        
+    }
+}
